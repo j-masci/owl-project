@@ -8,6 +8,13 @@
 # testing
 /coverage
 
+# IDE
+.idea
+
+/server/__pycache__
+/venv
+/owl-todo-dev.db
+
 # production
 /build
 
