@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './globalStyles.css';
 import reportWebVitals from './reportWebVitals';
+import {createStore, StoreProvider} from "easy-peasy";
+import Router from './Router';
+
+// easy-peasy (maybe not even needed)
+const store = {};
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <StoreProvider store={createStore(store)}>
+          <Router />
+      </StoreProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
