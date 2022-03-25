@@ -1,75 +1,50 @@
 
-python -m virtualenv env
-env\Scripts\activate
+## Owl Project (Tornado/React)
 
+#### `git clone https://github.com/j-masci/owl-project .`
 
-# Getting Started with Create React App
+### Directories:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- /server contains server code.
+- /src contains client code.
+- /public, client web server uses this
 
-## Available Scripts
+### Client
 
-In the project directory, you can run:
+Install:
 
-### `npm start`
+#### `yarn install --ignore-engines`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Ignore engines is usually optional (but I needed to use it). Something to do with eslint.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Run:
 
-### `npm test`
+#### `yarn start`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This will serve the client side app at http://localhost:3000 
 
-### `npm run build`
+It will also watch the code for changes.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Server/API
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Obviously, use a virtual env if you want:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### `python -m virtualenv venv`
+#### `venv\Scripts\activate`
 
-### `npm run eject`
+Install:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### `pip install -r requirements.txt`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Then, seed the database (drop and create all tables and add some initial data):
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Seeding needs to be done only once during installation, but can be done afterwards as needed to reset all data.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### `python server/app.py --seed`
 
-## Learn More
+Then, start the server:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### `python server/app.py --start`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+You should see the message, "API Started", at http://localhost:3003.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

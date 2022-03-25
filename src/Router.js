@@ -3,8 +3,6 @@ import Users from "./components/Users";
 import {Router as ReachRouter} from "@reach/router";
 import React from "react";
 
-
-
 const Router = () => {
     return(
         <ReachRouter>

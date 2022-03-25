@@ -16,7 +16,6 @@ import NewUser from "./NewUser";
 import MUIAlert from '@mui/material/Alert';
 import moment from "moment";
 
-
 const fetchUsers = async withResult => {
     api.get('users').then(req => {
         if (req.ok) {

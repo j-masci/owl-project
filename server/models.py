@@ -17,7 +17,6 @@ class UserModel:
     # returns a dict, not a model instance
     @staticmethod
     def get_by_id(user_id):
-        print('get by id', user_id)
         sql = "SELECT * FROM users WHERE id = ?"
         results = db.get_results(sql, [str(user_id)])
 
