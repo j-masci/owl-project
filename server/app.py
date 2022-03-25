@@ -13,7 +13,7 @@ def make_app():
 
 def serve():
     app = make_app()
-    print("Starting python HTTP server at http://localhost{port}:".format(port=config.port))
+    print("Starting python HTTP server at http://localhost:{port}".format(port=config.port))
     app.listen(config.port)
     IOLoop.current().start()
 
@@ -23,6 +23,7 @@ if __name__ == '__main__':
         if sys.argv[1] == '--seed':
             print('Seeding database. (tables will be dropped and re-populated).')
             db.seed(True)
+            print('Database seeded. Use --start to run the server now.')
         elif sys.argv[1] == '--start':
             serve()
     else:
